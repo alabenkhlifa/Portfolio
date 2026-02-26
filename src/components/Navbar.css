@@ -124,6 +124,20 @@
   justify-content: center;
   z-index: 2;
   filter: drop-shadow(0 2px 8px rgba(0, 119, 255, 0.3)) drop-shadow(0 4px 16px rgba(124, 58, 237, 0.25));
+  animation: notch-wiggle 3s ease-in-out 2s infinite;
+}
+
+.navbar:hover .navbar-notch,
+.navbar.scrolled .navbar-notch {
+  animation: none;
+}
+
+@keyframes notch-wiggle {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  20% { transform: translateX(-50%) rotate(-1.5deg); }
+  40% { transform: translateX(-50%) rotate(1.5deg); }
+  60% { transform: translateX(-50%) rotate(-0.8deg); }
+  80% { transform: translateX(-50%) rotate(0.8deg); }
 }
 
 .notch-curve {
