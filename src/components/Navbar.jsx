@@ -88,12 +88,23 @@ function Navbar() {
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <div className="navbar-glow-line" />
 
-        <div className="navbar-body">
-          <div className="navbar-inner">
+        {/* Thin bar */}
+        <div className="navbar-bar" />
+
+        {/* Notch — logo + nav links expand from here */}
+        <div className="navbar-notch">
+          <svg
+            className="notch-curve notch-curve-left"
+            viewBox="0 0 100 44"
+            preserveAspectRatio="none"
+          >
+            <path d="M0,0 L100,0 L100,44 C40,44 0,18 0,0 Z" />
+          </svg>
+          <div className="notch-center">
             <ul className="navbar-links navbar-links-left">
               {LEFT_LINKS.map(renderLink)}
             </ul>
-
+            <div className="navbar-logo-spacer" />
             <div
               className="navbar-logo"
               onClick={scrollToTop}
@@ -103,33 +114,31 @@ function Navbar() {
                 if (e.key === 'Enter' || e.key === ' ') scrollToTop();
               }}
             >
-              ABK
+              ALA
             </div>
-
+            <div className="navbar-logo-spacer" />
             <ul className="navbar-links navbar-links-right">
               {RIGHT_LINKS.map(renderLink)}
             </ul>
-
-            <button
-              className={`hamburger${mobileOpen ? ' open' : ''}`}
-              onClick={() => setMobileOpen((prev) => !prev)}
-              aria-label="Toggle navigation menu"
-            >
-              <span />
-              <span />
-              <span />
-            </button>
           </div>
+          <svg
+            className="notch-curve notch-curve-right"
+            viewBox="0 0 100 44"
+            preserveAspectRatio="none"
+          >
+            <path d="M100,0 L0,0 L0,44 C60,44 100,18 100,0 Z" />
+          </svg>
         </div>
 
-        <svg
-          className="navbar-wave"
-          viewBox="0 0 1440 50"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          className={`hamburger${mobileOpen ? ' open' : ''}`}
+          onClick={() => setMobileOpen((prev) => !prev)}
+          aria-label="Toggle navigation menu"
         >
-          <path d="M0,0 L620,0 Q620,50 660,50 L780,50 Q820,50 820,0 L1440,0 Z" />
-        </svg>
+          <span />
+          <span />
+          <span />
+        </button>
       </nav>
 
       <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>

@@ -41,7 +41,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <span className="footer-logo">ABK</span>
+            <span className="footer-logo">ALA</span>
             <p className="footer-tagline">
               Software Architect & Tech Lead
             </p>

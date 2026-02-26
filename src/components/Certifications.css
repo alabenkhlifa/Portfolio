@@ -31,6 +31,7 @@
 }
 
 .cert-card {
+  display: block;
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
@@ -42,6 +43,8 @@
   transform: translateY(30px);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
 .cert-card.visible {
