@@ -12,9 +12,7 @@ export default function Resume() {
     threshold: 0.05,
   });
 
-  const handlePrint = () => {
-    window.print();
-  };
+  const resumeUrl = `${import.meta.env.BASE_URL}Ala-Ben-Khalifa-Resume.pdf`;
 
   return (
     <section className="resume" id="resume">
@@ -29,7 +27,7 @@ export default function Resume() {
           ref={actionsRef}
         >
           <div>
-            <button className="btn btn-primary" onClick={handlePrint}>
+            <a className="btn btn-primary" href={resumeUrl} download="Ala Ben Khalifa — Software Architect & Tech Lead.pdf">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -43,11 +41,8 @@ export default function Resume() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Save as PDF
-            </button>
-            <p className="resume-hint">
-              Use "Save as PDF" in the print dialog for best results
-            </p>
+              Download PDF
+            </a>
           </div>
         </div>
 
@@ -67,28 +62,14 @@ export default function Resume() {
                 <span>ala.khliifa@gmail.com</span>
                 <span>+216 56 829 196</span>
                 <span>linkedin.com/in/ala-ben-khlifa</span>
-                <span>
-                  Tunis, Tunisia · Open to relocation — UAE / Saudi Arabia
-                </span>
+                <span>Tunis, Tunisia · Open to relocation</span>
               </div>
             </div>
 
             {/* Professional Summary */}
             <ResumeSection title="Professional Summary">
               <p className="resume-summary">
-                Software Architect and Technical Leader with 6+ years of
-                experience designing, building, and scaling cloud-native
-                platforms across AWS and Azure. Currently serving as CTO and
-                Co-Founder of a DOOH advertising startup, where I
-                single-handedly architected and deployed the entire cloud
-                infrastructure on AWS, attracting enterprise clients including
-                BYD, Tunisie Telecom, and Carrefour. Concurrently leading cloud
-                migration and API platform initiatives for major automotive and
-                industrial brands at MaibornWolff, a German technology
-                consultancy. Proven track record in microservices architecture,
-                infrastructure-as-code, and leading engineering teams on complex
-                distributed systems. University-level instructor in
-                Microservices Architecture and Spring Framework.
+                Software Architect and Technical Leader with 6+ years of experience designing and scaling cloud-native platforms across AWS and Azure. CTO & Co-Founder of a DOOH advertising startup serving enterprise clients such as BYD and Carrefour. Leading cloud migration and API platform initiatives for Mercedes-Benz at MaibornWolff. Previously led teams for Rolls-Royce. University instructor in Microservices Architecture and Spring Framework.
               </p>
             </ResumeSection>
 
@@ -139,7 +120,7 @@ export default function Resume() {
               </div>
             </ResumeSection>
 
-            {/* Experience */}
+            {/* Professional Experience — page 1 portion */}
             <ResumeSection title="Professional Experience">
               <ExpEntry
                 title="Chief Technology Officer (CTO) & Co-Founder"
@@ -151,36 +132,51 @@ export default function Resume() {
                   'Architected and built from scratch a full-stack DOOH advertising platform displaying targeted ads on venue screens across restaurants, cafes, and bars, with planned UK market expansion',
                   'Designed and deployed the entire AWS cloud infrastructure single-handedly, with full infrastructure-as-code using Terraform and automated CI/CD pipelines via GitHub Actions',
                 ]}
-                tech="AWS (ECS Fargate, RDS, ElastiCache, S3, CloudFront, ALB, ECR) · Terraform · GitHub Actions · PostgreSQL · Redis · WebSocket · Docker"
+                tech="AWS (ECS Fargate, RDS, ElastiCache, S3, CloudFront, ALB, ECR) · Terraform · GitHub Actions · PostgreSQL · Redis"
               />
 
-              <ExpEntry
-                title="Lead Software Engineer"
-                dates="October 2024 – Present"
-                company="MaibornWolff GmbH — German Technology Consultancy"
-                location="Tunis, Tunisia"
-                subsections={[
-                  {
-                    subtitle: 'Mercedes-Benz — PlaTo Migration to MO360',
-                    bullets: [
-                      "Led the migration of a production web application from standard Azure infrastructure to MO360, Mercedes-Benz's proprietary Azure-based PaaS platform",
-                      'Analyzed existing system architecture, identified technical risks, and designed a phased migration strategy ensuring minimal downtime and business continuity',
-                      'Applied cloud-native architectural patterns to improve scalability, reliability, and cost-efficiency',
-                    ],
-                  },
-                  {
-                    subtitle:
-                      'Husky Injection Molding — Cloud Architecture & Performance',
-                    bullets: [
-                      'Reverse-engineered existing Azure cloud infrastructure and codified it using Terraform (Infrastructure as Code)',
-                      'Designed and executed load testing strategies to identify system bottlenecks, delivering strategic recommendations for infrastructure scalability',
-                      'Designed and implemented an API integration architecture using Azure API Management to synchronize factory data with internal systems',
-                    ],
-                  },
-                ]}
-                tech="Azure · Terraform · Azure API Management · .NET/C# · DDD · Load Testing · Cloud Migration"
-              />
+              {/* Lead SE — only Mercedes-Benz on page 1 */}
+              <div className="resume-exp">
+                <div className="resume-exp-header">
+                  <strong className="resume-exp-title">Lead Software Engineer</strong>
+                  <span className="resume-exp-dates">October 2024 – Present</span>
+                </div>
+                <div className="resume-exp-company">
+                  MaibornWolff GmbH — German Technology Consultancy · Tunis, Tunisia
+                </div>
+                <div>
+                  <div className="resume-exp-subtitle">Mercedes-Benz — PlaTo Migration to MO360</div>
+                  <ul className="resume-exp-bullets">
+                    <li>Led the migration of a production web application from standard Azure infrastructure to MO360, Mercedes-Benz's proprietary Azure-based PaaS platform</li>
+                    <li>Analyzed existing system architecture, identified technical risks, and designed a phased migration strategy ensuring minimal downtime and business continuity</li>
+                    <li>Applied cloud-native architectural patterns to improve scalability, reliability, and cost-efficiency</li>
+                  </ul>
+                </div>
+              </div>
             </ResumeSection>
+          </div>
+
+          {/* PAGE 2 */}
+          <div className="resume-page resume-page-2">
+            <div className="resume-page2-header">
+              <span className="resume-page2-name">Ala Ben Khalifa</span>
+              <span className="resume-page2-label">Page 2</span>
+            </div>
+
+            {/* Lead SE continued — Husky + Tech line */}
+            <div className="resume-exp">
+              <div style={{ marginBottom: 0 }}>
+                <div className="resume-exp-subtitle">Husky Injection Molding — Cloud Architecture & Performance</div>
+                <ul className="resume-exp-bullets">
+                  <li>Reverse-engineered existing Azure cloud infrastructure and codified it using Terraform (Infrastructure as Code)</li>
+                  <li>Designed and executed load testing strategies to identify system bottlenecks, delivering strategic recommendations for infrastructure scalability</li>
+                  <li>Designed and implemented an API integration architecture using Azure API Management to synchronize factory data with internal systems</li>
+                </ul>
+              </div>
+              <div className="resume-exp-tech">
+                <strong>Tech:</strong> Azure · Terraform · Azure API Management · .NET/C# · DDD · Load Testing · Cloud Migration
+              </div>
+            </div>
 
             <ExpEntry
               title="Senior Software Engineer"
@@ -201,41 +197,27 @@ export default function Resume() {
               tech="Spring Boot · Kotlin · Java · Microservices · AWS · Kubernetes · Docker · MQTT · PostgreSQL · Firebase · SonarQube"
             />
 
-            <ResumeSection title="Professional Experience (continued)">
-              <ExpEntry
-                title="Software Engineer"
-                dates="October 2020 – October 2022"
-                company="MaibornWolff GmbH"
-                location="Tunis, Tunisia"
-                subsections={[
-                  {
-                    subtitle: 'Rolls-Royce Motor Cars — Whispers Platform',
-                    bullets: [
-                      "Developed microservices backend and native Android (Kotlin, Jetpack Compose) / iOS (Swift, SwiftUI) applications for Rolls-Royce's global customer platform",
-                      'Migrated legacy Drupal backend to Spring Boot microservices with MQTT real-time messaging',
-                    ],
-                  },
-                ]}
-                tech="Spring Boot · Java · Kotlin · Swift · Android · iOS · MVVM · Docker · Kubernetes · MQTT · PostgreSQL · Firebase"
-              />
+            <ExpEntry
+              title="Software Engineer"
+              dates="October 2020 – October 2022"
+              company="MaibornWolff GmbH"
+              location="Tunis, Tunisia"
+              bullets={[
+                "Developed microservices backend and native Android (Kotlin, Jetpack Compose) / iOS (Swift, SwiftUI) apps for Rolls-Royce Whispers platform; migrated legacy Drupal backend to Spring Boot with MQTT real-time messaging",
+              ]}
+              tech="Spring Boot · Java · Kotlin · Swift · Android · iOS · Docker · Kubernetes · MQTT · PostgreSQL · Firebase"
+            />
 
-              <ExpEntry
-                title="Software Engineer"
-                dates="February 2019 – October 2020"
-                company="Talan Tunisie"
-                location="Tunis, Tunisia"
-                subsections={[
-                  {
-                    subtitle: 'Byblos — Talan Group Enterprise ERP',
-                    bullets: [
-                      'Migrated Java EE/JSF monolith to Spring Boot/Angular microservices with RabbitMQ async messaging',
-                      'Developed financial reporting and analytics modules for the enterprise ERP platform',
-                    ],
-                  },
-                ]}
-                tech="Spring Boot · Angular · Java EE · JSF · RabbitMQ · PostgreSQL · Microservices"
-              />
-            </ResumeSection>
+            <ExpEntry
+              title="Software Engineer"
+              dates="February 2019 – October 2020"
+              company="Talan Tunisie"
+              location="Tunis, Tunisia"
+              bullets={[
+                'Migrated Java EE/JSF monolith to Spring Boot/Angular microservices with RabbitMQ async messaging; developed financial reporting and analytics modules for Byblos enterprise ERP',
+              ]}
+              tech="Spring Boot · Angular · Java EE · RabbitMQ · PostgreSQL · Microservices"
+            />
 
             {/* Education */}
             <ResumeSection title="Education">
@@ -309,13 +291,17 @@ function CompetencyRow({ label, value }) {
 function ExpEntry({ title, dates, company, location, bullets, subsections, tech }) {
   return (
     <div className="resume-exp">
-      <div className="resume-exp-header">
-        <strong className="resume-exp-title">{title}</strong>
-        <span className="resume-exp-dates">{dates}</span>
-      </div>
-      <div className="resume-exp-company">
-        {company} · {location}
-      </div>
+      {title && (
+        <div className="resume-exp-header">
+          <strong className="resume-exp-title">{title}</strong>
+          {dates && <span className="resume-exp-dates">{dates}</span>}
+        </div>
+      )}
+      {company && (
+        <div className="resume-exp-company">
+          {company}{location ? ` · ${location}` : ''}
+        </div>
+      )}
 
       {bullets && (
         <ul className="resume-exp-bullets">

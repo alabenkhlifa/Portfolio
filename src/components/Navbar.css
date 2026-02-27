@@ -268,7 +268,8 @@
     background: rgba(8, 8, 12, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 12px 24px;
+    padding: 16px 24px;
+    min-height: 56px;
   }
 
   .navbar-glow-line,
