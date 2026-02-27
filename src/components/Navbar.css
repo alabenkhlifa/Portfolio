@@ -83,6 +83,8 @@
 .navbar.scrolled .navbar-links-right li:nth-child(2) { transition-delay: 0.14s; }
 .navbar:hover .navbar-links-right li:nth-child(3),
 .navbar.scrolled .navbar-links-right li:nth-child(3) { transition-delay: 0.2s; }
+.navbar:hover .navbar-links-right li:nth-child(4),
+.navbar.scrolled .navbar-links-right li:nth-child(4) { transition-delay: 0.26s; }
 
 .navbar-links li a {
   font-size: 0.9rem;
@@ -171,7 +173,7 @@
 
 .navbar:hover .notch-center,
 .navbar.scrolled .notch-center {
-  width: 700px;
+  width: 780px;
 }
 
 .navbar-logo {

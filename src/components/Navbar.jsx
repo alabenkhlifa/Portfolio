@@ -10,6 +10,7 @@ const LEFT_LINKS = [
 const RIGHT_LINKS = [
   { label: 'Projects', href: 'projects' },
   { label: 'Certifications', href: 'certifications' },
+  { label: 'Resume', href: 'resume' },
   { label: 'Contact', href: 'contact' },
 ];
 

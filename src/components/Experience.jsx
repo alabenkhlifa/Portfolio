@@ -6,7 +6,7 @@ const experiences = [
   {
     role: "CTO & Co-Founder",
     company: "VERSE",
-    period: "2024 — Present",
+    period: "Oct 2025 — Present",
     project: "Digital Out-of-Home Advertising Platform",
     highlights: [
       "Architected and built from scratch a full-stack DOOH platform displaying targeted ads on venue screens, with planned UK expansion",
