@@ -47,21 +47,24 @@ function Navbar() {
 
   useEffect(() => {
     if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflowY = '';
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflowY = '';
     };
   }, [mobileOpen]);
 
   const scrollToSection = (sectionId) => {
+    setMobileOpen(false);
+    document.body.style.overflowY = '';
+
     const el = document.getElementById(sectionId);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
-    setMobileOpen(false);
   };
 
   const scrollToTop = () => {
